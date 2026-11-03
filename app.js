@@ -1,9 +1,11 @@
 import express from "express";
-import bookRoutes from './routes/BookRoute.js';
+import bookRoutes from './routes/bookRoute.js';
 import studentRoutes from "./routes/studentRoute.js";
 const app = express();
 
-app.use('/books',bookRoutes);
+app.use(express.json());
+
+app.use('/book',bookRoutes);
 app.use('/students', studentRoutes);
 
 try {
